@@ -21,7 +21,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -29,7 +29,11 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $insert = Contact::create($request->input());
+         if($insert != null){
+            $contacts  = Contact::all();
+            return view('index',['contacts'=>$contacts]);
+        } 
     }
 
     /**
