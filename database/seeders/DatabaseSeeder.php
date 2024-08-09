@@ -26,63 +26,63 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Harry Potter',
                 'email' => Str::random(10).'@example.com',
                 'phone' => random_int(1000000000,9999999999),
-                'address' => Str::random(50)
+                'address' => fake()->sentence(10)
             ],
 
             [
                 'name' => 'Charry Potter',
                 'email' => Str::random(10).'@example.com',
                 'phone' => random_int(1000000000,9999999999),
-                'address' => Str::random(50)
+                'address' => fake()->sentence(10)
             ],
 
             [
                 'name' => 'Prisoner of Azkaban',
                 'email' => Str::random(10).'@example.com',
                 'phone' => random_int(1000000000,9999999999),
-                'address' => Str::random(50)
+                'address' => fake()->sentence(10)
             ],
 
             [
                 'name' => 'Tom Bruce',
                 'email' => Str::random(10).'@example.com',
                 'phone' => random_int(1000000000,9999999999),
-                'address' => Str::random(50)
+                'address' => fake()->sentence(10)
             ],
 
             [
                 'name' => 'Cindrella Tabassum',
                 'email' => Str::random(10).'@example.com',
                 'phone' => random_int(1000000000,9999999999),
-                'address' => Str::random(50)
+                'address' => fake()->sentence(10)
             ],
 
             [
                 'name' => 'Naina Bose',
                 'email' => Str::random(10).'@example.com',
                 'phone' => random_int(1000000000,9999999999),
-                'address' => Str::random(50)
+                'address' => fake()->sentence(10)
             ],
 
             [
                 'name' => 'The Shining Mina',
                 'email' => Str::random(10).'@example.com',
                 'phone' => random_int(1000000000,9999999999),
-                'address' => Str::random(50)
+                'address' => fake()->sentence(10)
             ],
 
             [
                 'name' => 'Raju Mia',
                 'email' => Str::random(10).'@example.com',
                 'phone' => random_int(1000000000,9999999999),
-                'address' => Str::random(50)
+                'address' => fake()->sentence(10)
             ],
 
             [
                 'name' => 'Tomy Mia',
                 'email' => Str::random(10).'@example.com',
                 'phone' => random_int(1000000000,9999999999),
-                'address' => Str::random(50)
+                'address' => fake()->sentence(10)
             ]
 
         ]);

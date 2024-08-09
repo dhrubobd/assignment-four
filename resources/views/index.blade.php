@@ -24,7 +24,14 @@
             <div class="col-sm-2">{{ $contact->phone }}</div>
             <div class="col-sm-2">{{ $contact->address }}</div>
             <div class="col-sm-2"><button>Edit</button></div>
-            <div class="col-sm-2"><button>Delete</button></div>
+            <div class="col-sm-2">
+                <form action="{{ route('contacts.destroy',$contact) }}" method="POST">
+                    
+                    @csrf @method('DELETE') 
+                    <input type="hidden" name="id" value="{{ $contact->id }}">
+                    <button type="submit">Delete</button>
+                </form> 
+            </div>
         </div>
     @endforeach
     </div>

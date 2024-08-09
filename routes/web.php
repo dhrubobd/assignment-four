@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contacts',[ContactController::class,'listAllContacts']);
+//Route::get('/contacts',[ContactController::class,'index']);
+
+Route::resource('/contacts',ContactController::class);
