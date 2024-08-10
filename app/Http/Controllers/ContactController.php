@@ -10,9 +10,19 @@ class ContactController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $contacts  = Contact::all();
+        if($request->sort=="datea"){
+            $contacts  = Contact::orderBy('created_at','asc')->get();
+        }else if($request->sort=="dated"){
+            $contacts  = Contact::orderBy('created_at','desc')->get();
+        }else if($request->sort=="namea"){
+            $contacts  = Contact::orderBy('name','asc')->get();
+        }else if($request->sort=="named"){
+            $contacts  = Contact::orderBy('name','desc')->get();
+        }else{
+            $contacts  = Contact::all();
+        }
         return view('index',['contacts'=>$contacts]);
     }
 
