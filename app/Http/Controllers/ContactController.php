@@ -47,17 +47,20 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $request)
     {
-        //
+        $contact = Contact::find($request->id);
+        return view('edit',['contact'=>$contact]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        Contact::find($request->id)->update($request->input());
+        $contacts  = Contact::all();
+        return view('index',['contacts'=>$contacts]);
     }
 
     /**
