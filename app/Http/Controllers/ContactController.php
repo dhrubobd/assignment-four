@@ -20,6 +20,8 @@ class ContactController extends Controller
             $contacts  = Contact::orderBy('name','asc')->get();
         }else if($request->sort=="named"){
             $contacts  = Contact::orderBy('name','desc')->get();
+        }else if($request->search!=null){
+            $contacts = Contact::where('name','LIKE',"%$request->search%")->orWhere('email','LIKE',"%$request->search%")->get();
         }else{
             $contacts  = Contact::all();
         }
@@ -49,7 +51,7 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
         //
     }
